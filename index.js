@@ -19,21 +19,9 @@ app.get('/snap', function (req, res, next) {
 
         console.log(req.query.url)
 
-        var cmdPhantomJS = ['chmod', 'bin/phantomjs_linux', '777'].join(' ');
-
         var savePath = path.join(__dirname, 'public', 'screen') + '.png';
         var cmd = ['bin/phantomjs_linux', 'generator.js', req.query.url, savePath, 700, 1].join(' ');
         var exec = require('child_process').exec;
-
-        exec(cmdPhantomJS, function (error) {
-            if (error) {
-                res.status(422);
-                return res.json({ error: error});
-                return res.json({ message: 'Something went wrong, try reloading the page' });
-            }
-
-            return res.json({ path: '/screenshots/screen'+'.png' });
-        });
 
         exec(cmd, function (error) {
             if (error) {
