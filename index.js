@@ -2,14 +2,16 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send("Page daccueil du serveur Nodejs Leboncoin++.<hr><a href=\"/connexion\">connexion</a>")
+  res.send("index nodejs phantomjs")
 });
 
-app.get('/users', function(req, res) {
-  res.send('Connexion leboncoin');
+app.get('/connexion', function(req, res) {
+
+  res.send('Connexion leboncoin avec selenium');
 
   let email = 'alexandre.sergent.dev@outlook.com'
   let pwd = 'password96'
+
 });
 
 app.listen(process.env.PORT || 5000);
