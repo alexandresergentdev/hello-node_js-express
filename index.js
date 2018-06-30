@@ -20,7 +20,7 @@ app.get('/snap', function (req, res, next) {
         console.log(req.query.url)
 
         var savePath = path.join(__dirname, 'public', 'screen') + '.png';
-        var cmd = ['bin/phantomjs_linux', 'generator.js', req.query.url, savePath, 700, 1].join(' ');
+        var cmd = ['phantomjs/bin/phantomjs', 'generator.js', req.query.url, savePath, 700, 1].join(' ');
         var exec = require('child_process').exec;
 
         exec(cmd, function (error) {
