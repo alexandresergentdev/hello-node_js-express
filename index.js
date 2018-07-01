@@ -2,16 +2,27 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
+var exec = require('child_process').exec;
+
 app.get('/', function (req, res) {
   res.send("index nodejs phantomjs")
 });
 
 app.get('/connexion', function(req, res) {
 
-  res.send('Connexion leboncoin avec selenium version ++');
-
   let email = 'alexandre.sergent.dev@outlook.com'
   let pwd = 'password96'
+
+  res.write('Connexion '+email)
+
+  var cmd = ['phantomjs/bin/phantomjs', 'connexion.js', email, pwd].join(' ');
+  exec(cmd, function(error, stdout, stderr) {
+    console.log('error', error);
+    console.log('stdout', stdout);
+    console.log('stderr', stderr);
+  })
+
+  res.end()
 
 });
 
@@ -21,7 +32,7 @@ app.get('/snap', function (req, res, next) {
 
         var savePath = path.join(__dirname, 'public', 'screen') + '.png';
         var cmd = ['phantomjs/bin/phantomjs', 'generator.js', req.query.url, savePath, 700, 1].join(' ');
-        var exec = require('child_process').exec;
+
 
         exec(cmd, function (error) {
             if (error) {
