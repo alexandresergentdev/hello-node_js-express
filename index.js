@@ -17,9 +17,9 @@ app.get('/connexion', function(req, res) {
 
   var cmd = ['phantomjs/bin/phantomjs', 'connexion.js', email, pwd].join(' ');
   exec(cmd, function(error, stdout, stderr) {
-    console.log('error', error);
-    console.log('stdout', stdout);
-    console.log('stderr', stderr);
+    res.write('error', error);
+    res.write('stdout', stdout);
+    res.write('stderr', stderr);
   })
 
   res.end()
