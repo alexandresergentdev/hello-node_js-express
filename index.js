@@ -24,7 +24,7 @@ app.listen(process.env.PORT || 5000);
 
 console.log('App start on localhost:5000')
 
-const getPseudo = (async (user, pwd, log) => {
+const getPseudo = (async function(user, pwd, log) => {
       console.log('user:'+user+', pwd:'+pwd+', log:'+log);
 
     const print = async (message) => {
