@@ -5,7 +5,7 @@ var app = express();
 var exec = require('child_process').exec;
 
 app.get('/', function (req, res) {
-  res.send("index nodejs phantomjs")
+  res.send("index nodejs phantomjs update")
 });
 
 app.get('/connexion', function(req, res) {
