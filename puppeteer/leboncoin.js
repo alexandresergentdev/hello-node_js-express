@@ -32,7 +32,7 @@ module.exports = {
   }
 
   const WaitFor = async (selector) => {
-    await page.waitForSelector(selector, { timeout: 10000 }).then(() => console.log('Element ('+selector+') is present'))
+    await page.waitForSelector(selector, { timeout: 10000 }).then(() => print('Element ('+selector+') is present'))
   }
 
   const ClickNavigate = async (selector, waitFor = -1) => {
