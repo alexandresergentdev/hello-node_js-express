@@ -3,8 +3,17 @@ const url = require('url');
 const leboncoin = require('./puppeteer/leboncoin');
 const app = express();
 
+const log4js = require('log4js');
+log4js.configure({
+  appenders: { puppeteer: { type: 'file', filename: 'puppeteer.log' } },
+  categories: { default: { appenders: ['puppeteer'], level: 'trace' } }
+});
+const logger = log4js.getLogger('puppeteer');
+
+
 app.get('/', function(req, res) {
   res.end('index leboncoin puppeteer')
+  logger.trace('index');
 });
 
 app.get('/connexion/', function(req, res) {
