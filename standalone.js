@@ -52,7 +52,7 @@ const getPseudo = (async (user, pwd, log) => {
 
     // Main Flow
 
-    const C_HEADELESS = false
+    const C_HEADELESS = true
     const C_OPTIMIZE = true
     const C_SLOWMOTION = 0 // slow down by X ms
 
