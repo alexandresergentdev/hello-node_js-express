@@ -2,23 +2,14 @@
 
 const puppeteer = require('puppeteer');
 var colors = require('colors/safe'); // does not alter string prototype
-const log4js = require('log4js');
-log4js.configure({
-  appenders: { puppeteer: { type: 'file', filename: 'puppeteer.log' } },
-  categories: { default: { appenders: ['puppeteer'], level: 'trace' } }
-});
-const logger = log4js.getLogger('puppeteer');
 
-
-module.exports = {
-  getPseudo: (async (user, pwd, log) => {
+const getPseudo = (async (user, pwd, log) => {
 
     console.log('user:'+user+', pwd:'+pwd+', log:'+log);
 
 
     const print = async (message) => {
       log ? await console.log(message) : null;
-      logger.trace(message);
     }
     print('### DEBUT DE LA RECUPERATION DU PSEUDO ####');
 
@@ -134,10 +125,12 @@ module.exports = {
     }
     await setTimeout(function() {
       browser.close();
-    }, 100000);
+    }, 10000);
 
     print('### FIN DE LA RECUPERATION DU PSEUDO ####');
     print('');
     return nickname;
-  })
-}
+  });
+
+
+getPseudo('alexandre.sergent.dev@outlook.com', 'password96', true);
