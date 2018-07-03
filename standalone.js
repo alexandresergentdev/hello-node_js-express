@@ -58,7 +58,8 @@ const getPseudo = (async (user, pwd, log) => {
 
     const browser = await puppeteer.launch({
       headless: C_HEADELESS,
-      slowMo: C_SLOWMOTION
+      slowMo: C_SLOWMOTION,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
 
