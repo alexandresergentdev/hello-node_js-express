@@ -12,8 +12,8 @@ const logger = log4js.getLogger('puppeteer');
 
 
 app.get('/', function(req, res) {
-  res.end('index leboncoin puppeteer')
   logger.trace('index');
+  res.end('index leboncoin puppeteer with log4js')
 });
 
 app.get('/connexion/', function(req, res) {
