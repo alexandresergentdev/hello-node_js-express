@@ -1,0 +1,12 @@
+[2018-07-03T22:19:23.479] [TRACE] puppeteer - ### DEBUT DE LA RECUPERATION DU PSEUDO ####
+[2018-07-03T22:19:25.225] [TRACE] puppeteer - Navigate to: https://www.leboncoin.fr/compte/part/mes-annonces/
+[2018-07-03T22:19:25.614] [TRACE] puppeteer - Click selector (input[name=email]) and enter text: alexandre.sergent.dev@outlook.com
+[2018-07-03T22:19:25.678] [TRACE] puppeteer - Click selector (input[name=password]) and enter text: password96
+[2018-07-03T22:19:25.694] [TRACE] puppeteer - Click on selector (button[type=submit])
+[2018-07-03T22:19:26.901] [TRACE] puppeteer - Element (input[name=q]) is present
+[2018-07-03T22:19:27.420] [TRACE] puppeteer - Navigate to: https://www.leboncoin.fr/compte/edit
+[2018-07-03T22:19:27.423] [TRACE] puppeteer - Element (#lastname) is present
+[2018-07-03T22:19:27.424] [TRACE] puppeteer - Get value on selector (#lastname)
+[2018-07-03T22:19:27.425] [TRACE] puppeteer - [32mAlexSerdev[39m
+[2018-07-03T22:19:27.433] [TRACE] puppeteer - ### FIN DE LA RECUPERATION DU PSEUDO ####
+[2018-07-03T22:19:27.433] [TRACE] puppeteer - 
