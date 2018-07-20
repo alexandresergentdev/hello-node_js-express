@@ -32,6 +32,7 @@ app.get('/connexion/', function(req, res) {
     let pwd = query.pwd === undefined ? 'default' : query.pwd;
 
     leboncoin.getPseudo(user, pwd, false).then((pseudo) => {
+      console.log(pseudo);
       res.json({pseudo: pseudo});
     })
 });
